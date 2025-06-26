@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Mac</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mrmac-yellow': '#FFE500',
+                        'mrmac-purple': '#3B384D'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body class="bg-white">
+    <!-- Header Component -->
+    <header class="sticky top-0 z-50 w-full bg-black">
+        <div>
+            <div class="container mx-auto px-4 lg:px-6 flex items-center justify-between ">
+                <!-- Logo -->
+                <a href="/" class="flex-shrink-0">
+                    <div class="w-28 h-28 relative pt-4">
+                        <img src="public/assets/images/MrMac-logo.png" alt="MrMac Logo" class="w-4/5 h-4/5 object-contain">
+                    </div>
+                </a>
+                
+                <!-- Navigation - Desktop -->
+                <nav class="hidden lg:flex items-center space-x-8 xl:space-x-12">
+                    <a href="#" class="nav-link active text-mrmac-yellow text-lg xl:text-xl font-medium">Home</a>
+                    <a href="#" class="nav-link text-mrmac-yellow text-lg xl:text-xl font-medium">Menu</a>
+                    <a href="#" class="nav-link text-mrmac-yellow text-lg xl:text-xl font-medium">Services</a>
+                    <a href="#" class="nav-link text-mrmac-yellow text-lg xl:text-xl font-medium">About Us</a>
+                    <!-- Order Online Button --> 
+                <div class="hidden lg:block flex-shrink-0">
+                    <a href="#" class="bg-[#FFE500] py-3 px-8 font-bold text-base text-black rounded-full inline-block transition-all duration-200 text-center min-w-[140px] hover:bg-[#beaf03]">
+                        Order Online
+                    </a>
+                </div>
+                </nav>
+                
+                
+                
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button type="button" id="mobile-menu-button" class="bg-mrmac-yellow w-12 h-12 flex flex-col justify-center items-center rounded-md border-2 border-dashed border-gray-800">
+                        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5"></span>
+                        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5"></span>
+                        <span class="block w-6 h-0.5 bg-gray-800"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="lg:hidden bg-white border-b border-gray-200 hidden">
+            <div class="container mx-auto px-4">
+                <nav class="flex flex-col py-4">
+                    <a href="#" class="py-3 text-mrmac-purple text-xl font-medium border-b border-gray-100">Home</a>
+                    <a href="#" class="py-3 text-mrmac-purple text-xl font-medium border-b border-gray-100">Menu</a>
+                    <a href="#" class="py-3 text-mrmac-purple text-xl font-medium border-b border-gray-100">Services</a>
+                    <a href="#" class="py-3 text-mrmac-purple text-xl font-medium border-b border-gray-100">About Us</a>
+                    <a href="#" class="mt-4 bg-mrmac-yellow py-3 rounded-lg text-black text-lg font-bold text-center">
+                        Order Online
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Hero Section - Full Width -->
+        <section class="hero-section w-full h-[50vh] relative overflow-hidden">
+            <picture>
+            <!-- Hero Image - Background (visible only top half) -->
+                <source srcset="../public/assets/images/EFPI84831-mobile.png" media="(max-width: 768px)" />
+
+                <img src="../public/assets/images/EFPI84831.png" alt="Mr Mac Hero"
+                    class="absolute top-0 left-0 w-full h-full object-cover" />
+            </picture>
+            <!-- Overlay for dimming (optional) -->
+            <div class="absolute inset-0 bg-black/30"></div>
+
+            <!-- Hero Overlay with Text - Positioned at bottom -->
+            <div class="relative z-10 flex items-center h-full px-3 mt-24 md:px-12 md:mt-28 lg:px-24 mt-16">
+                <div>
+                <!-- Line + Label -->
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <!-- Yellow Line -->
+                    <div class="w-24 md:w-64 h-1 bg-yellow-400"></div>
+                    <span class="text-white text-xl uppercase tracking-wider">Mr Mac</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="text-6xl md:text-8xl font-extrabold text-yellow-400 mt-2 tracking-wide ">
+                    ABOUT
+                </h1>
+            </div>
+        </section>
+
+        
+        <!-- Who We Are Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Image -->
+                    <div class="relative">
+                        <img src="../public/assets/images/EFPI84691.png" 
+                            alt="Baker working" 
+                            class="w-full h-full object-cover rounded-lg shadow-lg">
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="space-y-6">
+                        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
+                            Who We Are
+                        </h2>
+                        
+                        <div class="py-8 space-y-4 text-gray-600 leading-relaxed">
+                            <p>
+                                Welcome to Mr Mac, one of the longest standing 
+                                Central American bakeries in the DMV in operation 
+                                since 1999 our journey began with the simple 
+                                mission to offer the freshest and tastiest sweet 
+                                breads in the region.
+                            </p>
+                            
+                            <p>
+                                Welcome to Mr Mac, one of the longest standing 
+                                Central American bakeries in the DMV in operation 
+                                since 1999 our journey began with the simple 
+                                mission to offer the freshest and tastiest sweet 
+                                breads in the region.
+                            </p>
+                            
+                            <p>
+                                Welcome to Mr Mac, one of the longest standing 
+                                Central American bakeries in the DMV in operation 
+                                since 1999 our journey began with the simple 
+                                mission to offer the freshest and tastiest sweet 
+                                breads in the region, we have expanded our 
+                                operations to offer the finest tres leches cakes 
+                                among other irresistible pastry flavors.
+                            </p>
+                        </div>
+                        
+                        <button class="bg-mrmac-yellow text-black font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                            See our menu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Want to know more Section -->
+        <section class="py-8 bg-mrmac-yellow">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-4xl lg:text-5xl font-bold text-black mb-8">
+                    Want to know more about us ?
+                </h2>
+                
+                <div class="space-y-2 mb-10">
+                    <p class="text-black font-medium">
+                        Curious about how we got started,
+                    </p>
+                    <p class="text-black">
+                        our culinary inspirations, or the people behind the scenes? We'd love to share more.
+                    </p>
+                </div>
+                
+                <button class="bg-black hover:bg-gray-800 text-white font-semibold px-10 py-4 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl">
+                    Contact us
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+   
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4">
+            <!-- Main Footer Content -->
+            <div class="flex flex-col md:flex-row justify-between">
+                <!-- Logo and Contact Info -->
+                <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                    <div class="flex items-start gap-2">
+                        <img src="../public/assets/images/footer_icon.png" alt="Mr Mac Footer Logo" class="w-16 h-16 rounded-full">
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-mrmac-yellow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-mrmac-yellow">53/5 Nguyễn Thiện Thuật Nha Trang, Vietnam</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-mrmac-yellow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                </svg>
+                                <a href="mailto:MrMac.Vietnam@gmail.com" class="text-sm text-mrmac-yellow">MrMac.Vietnam@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Us and Opening Hours Container -->
+                <div class="flex w-full md:w-2/3">
+                    <!-- About Us -->
+                    <div class="w-1/2 md:w-1/2 pr-4">
+                        <h3 class="text-mrmac-yellow font-bold mb-4">ABOUT US</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-sm text-mrmac-yellow">Our story</a></li>
+                            <li><a href="#" class="text-sm text-mrmac-yellow">Gallery</a></li>
+                            <li><a href="#" class="text-sm text-mrmac-yellow">Catering</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="w-1/2 md:w-1/2">
+                        <h3 class="text-mrmac-yellow font-bold mb-4">Opening hour</h3>
+                        <div class="space-y-2">
+                            <p class="text-sm text-mrmac-yellow">Monday - Friday : 10:00 AM - 10:00 PM</p>
+                            <p class="text-sm text-mrmac-yellow">Saturday - Sunday : 11:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-4 border-t border-gray-800">
+                <div class="text-center">
+                    <p class="text-sm text-mrmac-yellow">&copy; Copyright 2025 Pencil Web Designs</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="src/js/script.js"></script>
+</body> 
+</html> 

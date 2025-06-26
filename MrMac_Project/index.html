@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mr Mac</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "mrmac-yellow": "#FFE500",
+              "mrmac-purple": "#3B384D",
+              "primary": "#f59e0b",
+              "headerColor": "#1f2937",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="src/js/navbar.js"></script>
+    <script src="src/js/slide.js"></script>
+    <script src="src/js/script.js"></script>
+  </head>
+  <body class="bg-white">
+  <!-- ============================================ -->
+  <!--                 Navigation                   -->
+  <!-- ============================================ -->
+
+  <header id="cs-navigation">
+      <div class="cs-container">
+          <!--Nav Logo-->
+          <!--Logo is turned white in the css with a filter on dark mode-->
+          <a href="" class="cs-logo" aria-label="back to home" id="logo">
+              <img src="public/assets/images/MrMac-logo.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async" class="pr-6">
+          </a>
+          <!--Navigation List-->
+          <nav class="cs-nav" role="navigation">
+              <!--Mobile Nav Toggle-->
+              <button class="cs-toggle" aria-label="mobile menu toggle">
+                  <div class="cs-box" aria-hidden="true">
+                      <span class="cs-line cs-line1" aria-hidden="true"></span>
+                      <span class="cs-line cs-line2" aria-hidden="true"></span>
+                      <span class="cs-line cs-line3" aria-hidden="true"></span>
+                  </div>
+              </button>
+              <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+              <div class="cs-ul-wrapper">
+                  <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                      <li class="cs-li">
+                          <a href="" class="cs-li-link cs-active">
+                              Home
+                          </a>
+                      </li>
+                      <li class="cs-li">
+                          <a href="" class="cs-li-link hover:underline">
+                              Menu
+                          </a>
+                      </li>
+                      <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                      <li class="cs-li">
+                          <a href="" class="cs-li-link hover:underline">
+                              Services
+                          </a>
+                      </li>
+                      <li class="cs-li">
+                          <a href="" class="cs-li-link hover:underline">
+                              About us
+                          </a>
+                      </li>
+                      <li class="cs-button relative sm:hidden">
+                          <a
+                            href="#"
+                            class="cs-li-link bg-[#FFE500] py-3 px-8 font-bold text-md md:text-lg text-black rounded-full inline-block transition duration-1000 ease-out hover:scale-105"
+                          >
+                            Order Online
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+          <div class="cs-contact-group">
+              <a
+                  href="#"
+                  class="bg-[#FFE500] py-3 px-8 font-bold text-md md:text-lg text-black rounded-full inline-block transition-all duration-200 text-center min-w-[200px] hover:bg-[#beaf03]"
+                >
+                  Order Online
+                </a>
+          </div>
+      </div>
+  </header>
+                                
+    <main>
+      <!-- Hero Section - Full Width -->
+      <section class="w-full relative h-svh overflow-hidden">
+        <!-- Gradient Overlay -->
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent z-20"
+        ></div>
+
+        <!-- Slideshow Container -->
+        <div class="absolute inset-0 w-full h-full z-10">
+          <div id="slides" class="w-full h-full relative">
+            <img
+              src="public/assets/images/food_showcase.jpg"
+              class="slide absolute inset-0 w-full h-full object-cover object-center opacity-100 transition-opacity duration-1000 ease-in-out"
+            />
+            <img
+              src="public/assets/images/food_showcase.jpg"
+              class="slide absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000 ease-in-out"
+            />
+            <img
+              src="public/assets/images/food_showcase.jpg"
+              class="slide absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000 ease-in-out"
+            />
+          </div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content relative z-30 h-full">
+          <div class="container mx-auto h-full flex items-end">
+            <div class="hero-text space-y-4 pb-24 md:pb-40 pl-2">
+              <h1
+                class="text-white font-bold text-2xl md:text-4xl lg:text-5xl leading-tight pb-2"
+              >
+                New Mac & Cheese Menu
+              </h1>
+              <a
+                href="#"
+                class="bg-[#FFE500] py-3 px-8 font-bold text-md md:text-lg text-black rounded-full inline-block transition-all duration-200 text-center min-w-[200px] hover:bg-[#beaf03]"
+              >
+                Order Online
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Special Menu Section -->
+      <section class="special-menu py-16">
+        <div class="container mx-auto">
+          <h2 class="text-4xl font-bold text-center mb-12">Our Special Menu</h2>
+
+          <!-- Desktop View: Grid -->
+          <div class="hidden md:grid md:grid-cols-3 gap-8">
+            <!-- Menu Item 1: Kale Caesar -->
+            <div class="bg-white p-4 rounded-3xl">
+              <div class="rounded-3xl overflow-hidden mb-4">
+                <img
+                  src="public/assets/images/kale caesar.jpg"
+                  alt="Kale Caesar"
+                  class="fade-on-scroll opacity-0 translate-y-4 transition duration-1000 ease-out w-full h-full object-cover hover:scale-105"
+                />
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Kale Caesar</h3>
+              <p class="text-gray-700 mb-3">
+                Roasted chicken, tomatoes, parmesan crisps, shaved parmesan,
+                shredded kale, chopped romaine, caesar
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center font-bold text-black hover:text-gray-700 transition duration-500 hover:scale-105"
+              >
+                Order now →
+              </a>
+            </div>
+
+            <!-- Menu Item 2: Guacamole Greens -->
+            <div class=" bg-white p-4 rounded-3xl">
+              <div class="rounded-3xl overflow-hidden mb-4">
+                <img
+                  src="public/assets/images/Guacamole Screen.jpg"
+                  alt="Guacamole Greens"
+                  class="fade-on-scroll opacity-0 translate-y-4 transition duration-1000 ease-out w-full h-full object-cover hover:scale-105"
+                />
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Guacamole Greens</h3>
+              <p class="text-gray-700 mb-3">
+                Roasted chicken, avocado, tomatoes, pickled onions, shredded
+                cabbage, tortilla chips, spring mix, chopped romaine
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center font-bold text-black hover:text-gray-700 transition duration-500 hover:scale-105"
+              >
+                Order now →
+              </a>
+            </div>
+
+            <!-- Menu Item 3: Mediterranean Mix -->
+            <div class=" bg-white p-4 rounded-3xl">
+              <div class="rounded-3xl overflow-hidden mb-4">
+                <img
+                  src="public/assets/images/Roadtedchicken.jpg"
+                  alt="Roasted Chicken Mac"
+                  class="fade-on-scroll opacity-0 translate-y-4 transition duration-1000 ease-out w-full h-full object-cover hover:scale-105"
+                />
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Mediterranean Mix</h3>
+              <p class="text-gray-700 mb-3">
+                Roasted chicken, tomatoes, black olives, feta cheese, peppers,
+                cucumber, red onions, mixed greens, olive oil, balsamic glaze
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center font-bold text-black hover:text-gray-700 transition duration-500 hover:scale-105"
+              >
+                Order now →
+              </a>
+            </div>
+          </div>
+
+          <!-- Mobile View: Stacked with Overlay -->
+          <div class="md:hidden space-y-8 px-4">
+            <!-- Mobile Menu Item 1 -->
+            <div class="mobile-">
+              <img
+                src="public/assets/images/kale caesar.jpg"
+                alt="Kale Caesar"
+                class="fade-on-scroll opacity-0 translate-y-4 transition duration-1000 ease-out w-full h-full object-cover hover:scale-105"
+              />
+              <div class="menu-overlay">
+                <h3 class="text-2xl font-bold my-2">Kale Caesar</h3>
+                <p class="text-gray-700 mb-3">
+                  Roasted chicken, tomatoes, parmesan crisps, shaved parmesan,
+                  shredded kale, chopped romaine, lime squeeze, caesar
+                </p>
+                <a href="#"
+                class="inline-flex items-center font-bold text-black"
+                >Order now →</a>
+              </div>
+            </div>
+
+            <!-- Mobile Menu Item 2 -->
+            <div class="mobile-">
+              <img
+                src="public/assets/images/Guacamole Screen.jpg"
+                alt="Guacamole Greens"
+                class="fade-on-scroll opacity-0 translate-y-4 transition duration-1000 ease-out w-full h-full object-cover hover:scale-105"
+              />
+              <div class="menu-overlay">
+                <h3 class="text-2xl font-bold my-2">Guacamole Greens</h3>
+                <p class="text-gray-700 mb-3">
+                  Roasted chicken, avocado, tomatoes, pickled onions, shredded
+                  cabbage, tortilla chips, spring mix, chopped romaine, lime
+                  squeeze
+                </p>
+                <a href="#"
+                class="inline-flex items-center font-bold text-black"
+                >Order now →</a>
+              </div>
+            </div>
+
+            <!-- Mobile Menu Item 3 -->
+            <div class="mobile-">
+              <img
+                src="public/assets/images/Roadtedchicken.jpg"
+                alt="Mediterranean Mix"
+                class="fade-on-scroll opacity-0 translate-y-4 transition duration-1000 ease-out w-full h-full object-cover hover:scale-105"
+              />
+              <div class="menu-overlay">
+                <h3 class="text-2xl font-bold my-2">Mediterranean Mix</h3>
+                <p class="text-gray-700 mb-3">
+                  Roasted chicken, tomatoes, black olives, feta cheese, peppers,
+                  cucumber, red onions, mixed greens, olive oil, balsamic glaze
+                </p>
+                <a href="#"
+                class="inline-flex items-center font-bold text-black"
+                >Order now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- For Work Section -->
+      <section class="for-work-section bg-mrmac-yellow py-8">
+        <h3 class="uppercase font-bold text-lg mb-8 px-4 md:pl-52">MR MAC FOR WORK</h3>
+
+        <div class="container mx-auto md:mx-48 px-4 md:px-2 md:pt-8">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-center">
+            <!-- Left Content -->
+            <div class="md:col-span-5 self-start">
+              
+              <h2
+                class="text-3xl md:text-4xl lg:text-5xl font-bold md:mb-8 leading-tight"
+              >
+                All the ways we keep<br />your workplace working
+              </h2>
+
+              <div class="work-services-list space-y-4 md:space-y-8">
+                <!-- Service 1 -->
+                <div class="service-item">
+                  <h4
+                    class="text-2xl font-bold mb-2 md:mb-4 border-b-2 border-black inline-block"
+                  >
+                    Catering
+                  </h4>
+                  <p class="text-gray-800 text-lg">
+                    For the little things and the big milestones alike, we're
+                    here to bring the most enjoyable part
+                  </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-item">
+                  <h4
+                    class="text-2xl font-bold mb-2 md:mb-4 border-b-2 border-black inline-block"
+                  >
+                    Outpost
+                  </h4>
+                  <p class="text-gray-800 text-lg">
+                    A daily batch delivery right to your office to keep your
+                    team firing on all cylinders.
+                  </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-item">
+                  <h4
+                    class="text-2xl font-bold mb-2 md:mb-4 border-b-2 border-black inline-block"
+                  >
+                    Still WFH
+                  </h4>
+                  <p class="text-gray-800 text-lg">
+                    Learn about our Mac & Cheese credits program so your teams
+                    can fuel up with delicious meals.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class="md:col-span-7 md:justify-self-end md:pr-6">
+              <div class="rounded-3xl overflow-hidden shadow-lg">
+                <img
+                  src="public/assets/images/women eat.jpg"
+                  alt="Woman enjoying Mr Mac meal"
+                  class="w-full max-w-[487px] h-auto object-cover opacity-0 fade-on-scroll ease-out duration-1000"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Food Gallery Section -->
+      <section class="py-10 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+          <!-- Desktop Gallery Grid -->
+          <div class="hidden md:grid gallery-container parent">
+            <!-- Title and Call-to-Action (div11) -->
+            <div class="div11 flex flex-col justify-center items-start py-3">
+              <h2 class="text-3xl font-bold mb-4 text-black">
+                Explore our gallery
+              </h2>
+              <a
+                href="#"
+                class="bg-mrmac-yellow px-10 py-4 rounded-full text-black text-lg font-bold hover:bg-yellow-400 transition-colors"
+              >
+                Order Online
+              </a>
+            </div>
+            <!-- Food Item 1 (div9) -->
+            <div class="div9 gallery-item">
+              <img
+                src="public/assets/images/food1.jpg"
+                alt="Mac and Cheese dish"
+                class="w-full h-full object-cover rounded-lg transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <!-- Food Item 2 (div1) -->
+            <div class="div1 gallery-item">
+              <img
+                src="public/assets/images/food2.jpg"
+                alt="Chicken strips with sauce"
+                class="w-full h-full object-cover rounded-lg transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <!-- Food Item 3 (div2) -->
+            <div class="div2 gallery-item">
+              <img
+                src="public/assets/images/food5.jpg"
+                alt="Beef burger"
+                class="w-full h-full object-cover rounded-lg transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <!-- Food Item 4 (div4) -->
+            <div class="div4 gallery-item">
+              <img
+                src="public/assets/images/food3.jpg"
+                alt="Buffalo chicken sandwich"
+                class="w-full h-full object-cover rounded-lg transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <!-- Food Item 5 (div5) -->
+            <div class="div5 gallery-item">
+              <img
+                src="public/assets/images/food6.jpg"
+                alt="Chicken nuggets and salad"
+                class="w-full h-full object-cover rounded-lg transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <!-- Food Item 6 (div6) -->
+            <div class="div6 gallery-item">
+              <img
+                src="public/assets/images/food8.jpg"
+                alt="Beef steak meal"
+                class="w-full h-full object-cover rounded-lg transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <!-- Food Item 7 (div7) -->
+            <div class="div7 gallery-item">
+              <img
+                src="public/assets/images/food4.jpg"
+                alt="Spicy loaded fries"
+                class="w-full h-full object-cover rounded-lg transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <!-- Food Item 8 (div8) -->
+            <div class="div8 gallery-item">
+              <img
+                src="public/assets/images/food7.jpg"
+                alt="Loaded fries with dip"
+                class="w-full h-full object-cover rounded-lg transition duration-500 hover:scale-105"
+              />
+            </div>
+          </div>
+
+          <!-- Mobile Gallery View -->
+          <div class="md:hidden px-2.5">
+            <!-- Title and Call-to-Action -->
+            <div class="text-center mb-6">
+              <h2 class="text-3xl font-bold mb-4">Explore our gallery</h2>
+              <a
+                href="#"
+                class="bg-mrmac-yellow px-8 py-3 rounded-lg text-black text-base font-bold hover:bg-yellow-400 transition-colors inline-block hover:shadow-md hover:-translate-y-1 transform"
+              >
+                Order Online
+              </a>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src="public/assets/images/food1.jpg"
+                  alt="Mac and Cheese dish"
+                  class="w-full h-36 object-cover rounded-lg transition duration-500 hover:scale-105"
+                />
+              </div>
+
+              <div
+                class="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src="public/assets/images/food2.jpg"
+                  alt="Chicken strips with sauce"
+                  class="w-full h-36 object-cover rounded-lg transition duration-500 hover:scale-105"
+                />
+              </div>
+
+              <div
+                class="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src="public/assets/images/food5.jpg"
+                  alt="Beef burger"
+                  class="w-full h-36 object-cover rounded-lg transition duration-500 hover:scale-105"
+                />
+              </div>
+
+              <div
+                class="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src="public/assets/images/food3.jpg"
+                  alt="Buffalo chicken sandwich"
+                  class="w-full h-36 object-cover rounded-lg transition duration-500 hover:scale-105"
+                />
+              </div>
+
+              <div
+                class="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src="public/assets/images/food6.jpg"
+                  alt="Chicken nuggets and salad"
+                  class="w-full h-36 object-cover rounded-lg transition duration-500 hover:scale-105"
+                />
+              </div>
+
+              <div
+                class="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src="public/assets/images/food8.jpg"
+                  alt="Beef steak meal"
+                  class="w-full h-36 object-cover rounded-lg transition duration-500 hover:scale-105"
+                />
+              </div>
+
+              <div
+                class="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src="public/assets/images/food4.jpg"
+                  alt="Spicy loaded fries"
+                  class="w-full h-36 object-cover rounded-lg transition duration-500 hover:scale-105"
+                />
+              </div>
+
+              <div
+                class="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src="public/assets/images/food7.jpg"
+                  alt="Loaded fries with dip"
+                  class="w-full h-36 object-cover rounded-lg transition duration-500 hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-black text-white py-8">
+      <div class="container mx-auto px-4">
+        <!-- Main Footer Content -->
+        <div class="flex flex-col md:flex-row justify-between">
+          <!-- Logo and Contact Info -->
+          <div class="w-full md:w-1/3 mb-8 md:mb-0">
+            <div class="flex items-start gap-2">
+              <img
+                src="public/assets/images/footer_icon.png"
+                alt="Mr Mac Footer Logo"
+                class="w-16 h-16 rounded-full"
+              />
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-mrmac-yellow"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-sm text-mrmac-yellow"
+                    >53/5 Nguyễn Thiện Thuật Nha Trang, Vietnam</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-mrmac-yellow"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                    />
+                    <path
+                      d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                    />
+                  </svg>
+                  <a
+                    href="mailto:MrMac.Vietnam@gmail.com"
+                    class="text-sm text-mrmac-yellow"
+                    >MrMac.Vietnam@gmail.com</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Us and Opening Hours Container -->
+          <div class="flex w-full md:w-2/3">
+            <!-- About Us -->
+            <div class="w-1/2 md:w-1/2 pr-4">
+              <h3 class="text-mrmac-yellow font-bold mb-4">ABOUT US</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-sm text-mrmac-yellow">Our story</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm text-mrmac-yellow">Gallery</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm text-mrmac-yellow">Catering</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Opening Hours -->
+            <div class="w-1/2 md:w-1/2">
+              <h3 class="text-mrmac-yellow font-bold mb-4">Opening hour</h3>
+              <div class="space-y-2">
+                <p class="text-sm text-mrmac-yellow">
+                  Monday - Friday : 10:00 AM - 10:00 PM
+                </p>
+                <p class="text-sm text-mrmac-yellow">
+                  Saturday - Sunday : 11:00 AM - 10:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-8 pt-4 border-t border-gray-800">
+          <div class="text-center">
+            <p class="text-sm text-mrmac-yellow">
+              &copy; Copyright 2025 Pencil Web Designs
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

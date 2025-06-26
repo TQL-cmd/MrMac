@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Mac</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mrmac-yellow': '#FFE500',
+                        'mrmac-purple': '#3B384D'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body class="bg-white">
+    <!-- Header Component -->
+    <header class="sticky top-0 z-50 w-full bg-black">
+        <div>
+            <div class="container mx-auto px-4 lg:px-6 flex items-center justify-between ">
+                <!-- Logo -->
+                <a href="/" class="flex-shrink-0">
+                    <div class="w-28 h-28 relative pt-4">
+                        <img src="public/assets/images/MrMac-logo.png" alt="MrMac Logo" class="w-4/5 h-4/5 object-contain">
+                    </div>
+                </a>
+                
+                <!-- Navigation - Desktop -->
+                <nav class="hidden lg:flex items-center space-x-8 xl:space-x-12">
+                    <a href="#" class="nav-link active text-mrmac-yellow text-lg xl:text-xl font-medium">Home</a>
+                    <a href="#" class="nav-link text-mrmac-yellow text-lg xl:text-xl font-medium">Menu</a>
+                    <a href="#" class="nav-link text-mrmac-yellow text-lg xl:text-xl font-medium">Services</a>
+                    <a href="#" class="nav-link text-mrmac-yellow text-lg xl:text-xl font-medium">About Us</a>
+                    <!-- Order Online Button --> 
+                <div class="hidden lg:block flex-shrink-0">
+                    <a href="#" class="bg-[#FFE500] py-3 px-8 font-bold text-base text-black rounded-full inline-block transition-all duration-200 text-center min-w-[140px] hover:bg-[#beaf03]">
+                        Order Online
+                    </a>
+                </div>
+                </nav>
+                
+                
+                
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button type="button" id="mobile-menu-button" class="bg-mrmac-yellow w-12 h-12 flex flex-col justify-center items-center rounded-md border-2 border-dashed border-gray-800">
+                        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5"></span>
+                        <span class="block w-6 h-0.5 bg-gray-800 mb-1.5"></span>
+                        <span class="block w-6 h-0.5 bg-gray-800"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="lg:hidden bg-white border-b border-gray-200 hidden">
+            <div class="container mx-auto px-4">
+                <nav class="flex flex-col py-4">
+                    <a href="#" class="py-3 text-mrmac-purple text-xl font-medium border-b border-gray-100">Home</a>
+                    <a href="#" class="py-3 text-mrmac-purple text-xl font-medium border-b border-gray-100">Menu</a>
+                    <a href="#" class="py-3 text-mrmac-purple text-xl font-medium border-b border-gray-100">Services</a>
+                    <a href="#" class="py-3 text-mrmac-purple text-xl font-medium border-b border-gray-100">About Us</a>
+                    <a href="#" class="mt-4 bg-mrmac-yellow py-3 rounded-lg text-black text-lg font-bold text-center">
+                        Order Online
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Hero Section - Full Width -->
+        <section class="hero-section w-full h-[50vh] relative overflow-hidden">
+            <picture>
+            <!-- Hero Image - Background (visible only top half) -->
+                <source srcset="../public/assets/images/EFPI84831-mobile.png" media="(max-width: 768px)" />
+
+                <img src="../public/assets/images/EFPI84831.png" alt="Mr Mac Hero"
+                    class="absolute top-0 left-0 w-full h-full object-cover" />
+            </picture>
+            <!-- Overlay for dimming (optional) -->
+            <div class="absolute inset-0 bg-black/30"></div>
+
+            <!-- Hero Overlay with Text - Positioned at bottom -->
+            <div class="relative z-10 flex items-center h-full px-3 mt-24 md:px-12 md:mt-28 lg:px-24 mt-16">
+                <div>
+                <!-- Line + Label -->
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <!-- Yellow Line -->
+                    <div class="w-48 md:w-96 h-1 bg-yellow-400"></div>
+                    <span class="text-white text-xl  uppercase tracking-wider">Mr Mac</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="text-6xl md:text-8xl font-extrabold text-yellow-400 mt-2 tracking-wide ">
+                    CONTACT
+                </h1>
+            </div>
+        </section>
+
+        
+        <!-- Who We Are Section -->
+        <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">
+                        Send Us a Message
+                    </h2>
+                    
+                    <form class="space-y-6">
+                        <!-- Name Field -->
+                        <div>
+                            <input type="text" 
+                                   placeholder="Name *" 
+                                   required
+                                   class="w-full px-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-gray-500">
+                        </div>
+                        
+                        <!-- Email Field -->
+                        <div>
+                            <input type="email" 
+                                   placeholder="Email" 
+                                   class="w-full px-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-gray-500">
+                        </div>
+                        
+                        <!-- Phone Field -->
+                        <div>
+                            <input type="tel" 
+                                   placeholder="Phone number *" 
+                                   required
+                                   class="w-full px-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-gray-500">
+                        </div>
+                        
+                        <!-- Message Field -->
+                        <div>
+                            <textarea placeholder="Send your message" 
+                                      rows="4"
+                                      class="w-full px-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-gray-500 resize-none"></textarea>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" 
+                                class="w-full bg-mrmac-yellow hover:bg-yellow-500 text-black font-bold py-4 px-6 rounded-lg transition-colors duration-300 uppercase tracking-wide">
+                            SEND
+                        </button>
+                    </form>
+                    
+                    <!-- Contact Info -->
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <div class="grid grid-cols-2 gap-6">
+                            <!-- Phone -->
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-md text-gray-500 uppercase font-semibold">PHONE</p>
+                                    <p class="text-sm text-gray-700">02 5542 1234</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-md text-gray-500 uppercase font-semibold">EMAIL</p>
+                                    <p class="text-sm text-gray-700">info@mrsmac.com.au</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map Section -->
+                <div class="relative">
+                    <div class="map-container h-full min-h-[500px] rounded-2xl shadow-lg bg-gradient-to-br from-gray-100 to-gray-200">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.1282720064196!2d109.19122237609884!3d12.23959298801262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317067d18c94af55%3A0xdbee929fbc2f5858!2zTXIgTWFjIHwgVGV4YXMgTWFjcyAmIENoaWNrZW4gfCDthY3sgqzsiqQg66elICYg7LmY7YKoIHwg0KLQtdGF0LDRgdGB0LrQuNC5INC80LDQui3QvS3Rh9C40Lcg0Lgg0LrRg9GA0LjRhtCw!5e0!3m2!1svi!2s!4v1750736423084!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+    </main>
+
+   
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4">
+            <!-- Main Footer Content -->
+            <div class="flex flex-col md:flex-row justify-between">
+                <!-- Logo and Contact Info -->
+                <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                    <div class="flex items-start gap-2">
+                        <img src="../public/assets/images/footer_icon.png" alt="Mr Mac Footer Logo" class="w-16 h-16 rounded-full">
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-mrmac-yellow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-mrmac-yellow">53/5 Nguyễn Thiện Thuật Nha Trang, Vietnam</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-mrmac-yellow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                </svg>
+                                <a href="mailto:MrMac.Vietnam@gmail.com" class="text-sm text-mrmac-yellow">MrMac.Vietnam@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Us and Opening Hours Container -->
+                <div class="flex w-full md:w-2/3">
+                    <!-- About Us -->
+                    <div class="w-1/2 md:w-1/2 pr-4">
+                        <h3 class="text-mrmac-yellow font-bold mb-4">ABOUT US</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-sm text-mrmac-yellow">Our story</a></li>
+                            <li><a href="#" class="text-sm text-mrmac-yellow">Gallery</a></li>
+                            <li><a href="#" class="text-sm text-mrmac-yellow">Catering</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="w-1/2 md:w-1/2">
+                        <h3 class="text-mrmac-yellow font-bold mb-4">Opening hour</h3>
+                        <div class="space-y-2">
+                            <p class="text-sm text-mrmac-yellow">Monday - Friday : 10:00 AM - 10:00 PM</p>
+                            <p class="text-sm text-mrmac-yellow">Saturday - Sunday : 11:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-4 border-t border-gray-800">
+                <div class="text-center">
+                    <p class="text-sm text-mrmac-yellow">&copy; Copyright 2025 Pencil Web Designs</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="src/js/script.js"></script>
+</body> 
+</html> 
