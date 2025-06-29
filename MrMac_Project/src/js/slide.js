@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function (){
     let current = 0;
     const slides = document.querySelectorAll('#slides .slide');
     const total = slides.length;
@@ -10,4 +10,4 @@ document.addEventListener("DOMContentLoaded", function () {
       slides[current].classList.remove('opacity-0');
       slides[current].classList.add('opacity-100');
     }, 5000); // 5 seconds
-  });
+  };

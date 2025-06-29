@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", (event) => {
+window.onload = function (){
 	// add classes for mobile navigation toggling
 	var CSbody = document.querySelector('body');
 	const CSnavbarMenu = document.querySelector('#cs-navigation');
@@ -32,4 +32,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
 		};
 		item.addEventListener('click', onClick);
 	}
-});
+};
